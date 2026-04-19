@@ -1,4 +1,17 @@
 /* Reset default styles */
+:root {
+    --green-dark: #0f3d2e;
+    --green-mid: #3f8f6b;
+    --pink-light: #f7a1c4;
+
+    --bg-main: #f6fbf8;        /* subtle green-tinted background */
+    --card-bg: #ffffff;
+
+    --text-primary: #1f2d2a;
+    --text-secondary: #5f6f6a;
+
+    --accent-soft: #e8f5ef;    /* soft green highlight */
+}
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +19,19 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
 }
 
 /* Header styling */
 header {
     text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, #0f3d2e 0%, #3f8f6b 40%, #f7a1c4 100%);
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--green-dark), var(--pink-light));
     color: white;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
 }
 
 header h1 {
@@ -34,27 +49,34 @@ header p {
 }
 
 /* About Me Section */
-.about-section {
+.about-section,
+.links-section {
+    background: var(--card-bg);
+    margin: 2rem auto;
+    max-width: 900px;
     padding: 2rem;
-    background-color: white;
-    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    animation: fadeIn 0.6s ease forwards;
 }
 
 .section-title {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
+    color: var(--green-dark);
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -6px;
     left: 0;
     width: 100%;
-    height: 2px;
-    background-color: #333;
+    height: 3px;
+    background: linear-gradient(to right, var(--green-mid), var(--pink-light));
+    border-radius: 2px;
 }
 
 .about-content {
@@ -62,7 +84,6 @@ header p {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-top: 1.5rem;
 }
 
 .profile-pic {
@@ -70,8 +91,8 @@ header p {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--accent-soft);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .about-text {
@@ -81,16 +102,10 @@ header p {
 
 .about-text p {
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-secondary);
 }
 
 /* Connect with Me Section */
-.links-section {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
 .links-section h2 {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
@@ -108,8 +123,12 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
 }
-
+.link-item:hover {
+    transform: translateY(-4px);
+}
 .circle-image {
     width: 100px;
     height: 100px;
@@ -119,14 +138,40 @@ header p {
     transition: transform 0.3s ease;
 }
 
+.circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .circle-image:hover {
-    transform: scale(1.1);
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(15, 61, 46, 0.25);
 }
 
 .link-item p {
     margin-top: 0.5rem;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.link-item:hover p {
+    color: var(--green-mid);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive design */
