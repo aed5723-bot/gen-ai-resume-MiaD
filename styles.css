@@ -32,6 +32,7 @@ header {
     background: linear-gradient(135deg, var(--green-dark), var(--pink-light));
     color: white;
     box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    position: relative;
 }
 
 header h1 {
