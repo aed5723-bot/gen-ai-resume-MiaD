@@ -1,6 +1,6 @@
 # Resume Web Application Starter
 
-This repository provides a starter template for building a personal resume webpage as part of a web application development project.
+This repository provides a starter template for building a personal resume webpage as part of a web application development project!
 
 ## Getting Started
 
