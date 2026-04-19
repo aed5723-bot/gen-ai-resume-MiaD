@@ -189,4 +189,19 @@ header p {
         flex-direction: column;
         gap: 1.5rem;
     }
+
+    body.dark {
+    --bg-main: #0e1a17;
+    --card-bg: #132521;
+
+    --text-primary: #e6f2ee;
+    --text-secondary: #a7c1b8;
+
+    --accent-soft: #1f3a34;
+}
+
+body.dark .about-section,
+body.dark .links-section {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
 }
