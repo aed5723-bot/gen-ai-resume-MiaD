@@ -204,6 +204,9 @@ body.dark .about-section,
 body.dark .links-section {
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
+    .dark-toggle {
+    z-index: 9999;
+}
     /* Responsive design */
 @media (max-width: 768px) {
     .about-content {
