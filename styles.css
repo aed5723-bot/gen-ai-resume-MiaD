@@ -176,22 +176,8 @@ header p {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .about-text {
-        text-align: center;
-    }
-
-    .links-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    body.dark {
+body.dark {
     --bg-main: #0e1a17;
     --card-bg: #132521;
 
