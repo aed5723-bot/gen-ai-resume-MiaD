@@ -204,4 +204,20 @@ body.dark .about-section,
 body.dark .links-section {
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
+    /* Responsive design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
 }
